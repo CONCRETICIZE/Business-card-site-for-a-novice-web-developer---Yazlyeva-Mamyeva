@@ -1,4 +1,4 @@
-﻿import { useContext, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { LanguageContext } from '../LanguageContext';
 import './news.css';

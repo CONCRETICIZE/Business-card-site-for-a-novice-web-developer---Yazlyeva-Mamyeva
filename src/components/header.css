@@ -3,21 +3,69 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1e1e2f;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   flex-wrap: wrap;
+  position: relative;
 }
 
 .logo a {
-  color: #61dafb;
+  color: var(--logo-color);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
+.slogan {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--slogan-color);
+  margin-top: -5px;
+}
+
+
+.hamburger {
+  display: none;               
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger-line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Анимация в крестик */
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav a {
   color: white;
-  margin: 0 0.5rem;
   text-decoration: none;
 }
 
@@ -34,26 +82,39 @@
   padding: 0.2rem 0.5rem;
 }
 
-.slogan {
-  display: block;
-  font-size: 0.8rem;
-  color: #ccc;
-  margin-top: -5px;
-}
-
 .lang-switch button:hover {
   background: white;
   color: #1e1e2f;
 }
 
+
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
+  .hamburger {
+    display: flex;           
   }
+
   .nav {
-    margin: 0.5rem 0;
-    display: flex;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1e1e2f;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1.2rem;
+    display: none;          
+  }
+
+  .nav.open {
+    display: flex;           
+  }
+
+  .lang-switch {
+    margin-left: auto;       
+  }
+
+  .header {
+    flex-wrap: nowrap;      
   }
 }

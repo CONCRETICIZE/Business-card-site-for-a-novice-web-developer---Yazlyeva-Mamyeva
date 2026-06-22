@@ -2,18 +2,59 @@ import { useState, useContext } from 'react';
 import { LanguageContext } from '../LanguageContext';
 import './contacts.css';
 
+const initialForm = { name: '', email: '', message: '' };
+
 function Contacts() {
   const { t } = useContext(LanguageContext);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Сброс ошибки при изменении поля
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: '' }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'invalid';
+    }
+    if (!formData.message.trim()) newErrors.message = 'required';
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(t('contacts.alert').replace('{{name}}', formData.name));
-    setFormData({ name: '', email: '', message: '' });
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setStatus('sending');
+    // Имитация отправки на сервер
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setStatus('success');
+      setFormData(initialForm);
+      setErrors({});
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  // Перевод ошибок
+  const errorText = {
+    required: t('contacts.errors_required') || 'Обязательное поле',
+    invalid: t('contacts.errors_invalid') || 'Некорректный формат',
   };
 
   return (
@@ -24,30 +65,35 @@ function Contacts() {
           <h2>{t('contacts.info_title')}</h2>
           <ul>
             <li>
-              <strong>{t('contacts.phone')}</strong>{' '}
-              <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+              <strong>{t('contacts.phone_label')}</strong>{' '}
+              <a href={`tel:${t('contacts.phone_value').replace(/\D/g, '')}`}>
+                {t('contacts.phone_value')}
+              </a>
             </li>
             <li>
-              <strong>{t('contacts.email')}</strong>{' '}
-              <a href="mailto:hello@webcraft.ru">hello@webcraft.ru</a>
+              <strong>{t('contacts.email_label')}</strong>{' '}
+              <a href={`mailto:${t('contacts.email_value')}`}>{t('contacts.email_value')}</a>
             </li>
             <li>
-              <strong>{t('contacts.telegram')}</strong>{' '}
-              <a href="https://t.me/webcraft" target="_blank" rel="noreferrer">@webcraft</a>
+              <strong>{t('contacts.telegram_label')}</strong>{' '}
+              <a href={`https://t.me/${t('contacts.telegram_value').replace('@', '')}`} target="_blank" rel="noreferrer">
+                {t('contacts.telegram_value')}
+              </a>
             </li>
             <li>
-              <strong>{t('contacts.address')}</strong> {t('contacts.address_text')}
+              <strong>{t('contacts.address_label')}</strong> {t('contacts.address_text')}
             </li>
           </ul>
           <div className="social-links">
-            <a href="https://vk.com" target="_blank" rel="noreferrer" className="social-icon">VK</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="social-icon">GitHub</a>
-            <a href="https://habr.com" target="_blank" rel="noreferrer" className="social-icon">Habr</a>
+            <a href="https://vk.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">VK</a>
+            <a href="https://github.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">GitHub</a>
+            <a href="https://habr.com/ru/users/webcraft" target="_blank" rel="noreferrer" className="social-icon">Habr</a>
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
           <h2>{t('contacts.form_title')}</h2>
+
           <div className="form-group">
             <label htmlFor="name">{t('contacts.name_label')}</label>
             <input
@@ -56,9 +102,11 @@ function Contacts() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
+              className={errors.name ? 'error' : ''}
             />
+            {errors.name && <span className="field-error">{errorText[errors.name]}</span>}
           </div>
+
           <div className="form-group">
             <label htmlFor="email">{t('contacts.email_label')}</label>
             <input
@@ -67,9 +115,11 @@ function Contacts() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
+              className={errors.email ? 'error' : ''}
             />
+            {errors.email && <span className="field-error">{errorText[errors.email]}</span>}
           </div>
+
           <div className="form-group">
             <label htmlFor="message">{t('contacts.message_label')}</label>
             <textarea
@@ -78,10 +128,25 @@ function Contacts() {
               rows="5"
               value={formData.message}
               onChange={handleChange}
-              required
+              className={errors.message ? 'error' : ''}
             ></textarea>
+            {errors.message && <span className="field-error">{errorText[errors.message]}</span>}
           </div>
-          <button type="submit" className="submit-btn">{t('contacts.submit')}</button>
+
+          <button type="submit" className="submit-btn" disabled={status === 'sending'}>
+            {status === 'sending' ? (t('contacts.sending') || 'Отправка...') : t('contacts.submit')}
+          </button>
+
+          {status === 'success' && (
+            <p className="form-success">
+              {t('contacts.success_msg') || 'Сообщение успешно отправлено!'}
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="form-error">
+              {t('contacts.error_msg') || 'Произошла ошибка. Попробуйте позже.'}
+            </p>
+          )}
         </form>
       </div>
     </section>

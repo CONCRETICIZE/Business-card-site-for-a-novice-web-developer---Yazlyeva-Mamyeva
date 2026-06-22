@@ -14,11 +14,13 @@
 }
 
 .news-card {
-  background: #f9f9fb;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
+  background: var(--card-bg);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  /* ... остальное без изменений */
+}
+
+.news-card h2 {
+  color: var(--text-color);
 }
 
 .news-card:hover {

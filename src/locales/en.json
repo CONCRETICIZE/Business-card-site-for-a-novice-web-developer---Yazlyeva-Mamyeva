@@ -84,20 +84,28 @@
         "features": ["Pixel Perfect", "BEM methodology", "Accessibility (a11y)"]
       }
     ]
-  },
-  "contacts": {
-    "title": "Contact us",
-    "info_title": "Our contacts",
-    "phone": "Phone:",
-    "email": "Email:",
-    "telegram": "Telegram:",
-    "address": "Address:",
-    "address_text": "Moscow, Primernaya st., 1",
-    "form_title": "Write to us",
-    "name_label": "Name",
-    "email_label": "Email",
-    "message_label": "Message",
-    "submit": "Send",
-    "alert": "Thank you, {{name}}! We have received your message."
-  }
+    },
+        "contacts": {
+        "title": "Contact us",
+        "info_title": "Our contacts",
+        "phone_label": "Phone:",
+        "phone_value": "+7 (999) 123-45-67",
+        "email_label": "Email:",
+        "email_value": "hello@webcraft.ru",
+        "telegram_label": "Telegram:",
+        "telegram_value": "@webcraft",
+        "address_label": "Address:",
+        "address_text": "Moscow, Primernaya st., 1",
+        "form_title": "Write to us",
+        "name_label": "Name",
+        "email_label": "Email",
+        "message_label": "Message",
+        "submit": "Send",
+        "alert": "Thank you, {{name}}! We have received your message.",
+        "errors_required": "Required field",
+        "errors_invalid": "Invalid email format",
+        "sending": "Sending...",
+        "success_msg": "Message sent successfully!",
+        "error_msg": "An error occurred. Please try again later."
+    }
 }

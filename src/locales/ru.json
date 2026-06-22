@@ -84,20 +84,28 @@
         "features": ["Pixel Perfect", "Методология БЭМ", "Доступность (a11y)"]
       }
     ]
-  },
-  "contacts": {
-    "title": "Свяжитесь с нами",
-    "info_title": "Наши контакты",
-    "phone": "Телефон:",
-    "email": "Email:",
-    "telegram": "Telegram:",
-    "address": "Адрес:",
-    "address_text": "г. Москва, ул. Примерная, д. 1",
-    "form_title": "Напишите нам",
-    "name_label": "Имя",
-    "email_label": "Email",
-    "message_label": "Сообщение",
-    "submit": "Отправить",
-    "alert": "Спасибо, {{name}}! Мы получили ваше сообщение."
-  }
+    },
+        "contacts": {
+        "title": "Свяжитесь с нами",
+        "info_title": "Наши контакты",
+        "phone_label": "Телефон:",
+        "phone_value": "+7 (999) 123-45-67",
+        "email_label": "Email:",
+        "email_value": "hello@webcraft.ru",
+        "telegram_label": "Telegram:",
+        "telegram_value": "@webcraft",
+        "address_label": "Адрес:",
+        "address_text": "г. Москва, ул. Примерная, д. 1",
+        "form_title": "Напишите нам",
+        "name_label": "Имя",
+        "email_label": "Email",
+        "message_label": "Сообщение",
+        "submit": "Отправить",
+        "alert": "Спасибо, {{name}}! Мы получили ваше сообщение.",
+        "errors_required": "Обязательное поле",
+        "errors_invalid": "Некорректный формат email",
+        "sending": "Отправка...",
+        "success_msg": "Сообщение успешно отправлено!",
+        "error_msg": "Произошла ошибка. Попробуйте позже."
+    }
 }

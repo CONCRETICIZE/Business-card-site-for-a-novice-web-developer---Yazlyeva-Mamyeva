@@ -9,6 +9,10 @@ import About from './pages/about';
 import Contacts from './pages/contacts';
 import Services from './pages/services';
 
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import PageWrapper from './components/PageWrapper';
+
 function App() {
   return (
     <Router>

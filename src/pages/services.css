@@ -1,0 +1,86 @@
+.services {
+  padding: 2rem;
+}
+
+.services h1 {
+  margin-bottom: 0.5rem;
+  color: #1e1e2f;
+}
+
+.services-intro {
+  margin-bottom: 2rem;
+  color: #555;
+  max-width: 700px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #f9f9fb;
+  border-radius: 8px;
+  padding: 1.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card h2 {
+  color: #1e1e2f;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #61dafb;
+  margin: 0.5rem 0;
+}
+
+.desc {
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.features li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.order-btn {
+  display: block;
+  text-align: center;
+  background: #61dafb;
+  color: #1e1e2f;
+  padding: 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.order-btn:hover {
+  background: #1e1e2f;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 1rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

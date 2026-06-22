@@ -1,23 +1,22 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { LanguageContext } from '../LanguageContext';
 import './home.css';
 
 function Home() {
+  const { t } = useContext(LanguageContext);
+
   return (
     <article className="home">
-      <h1>WebCraft — ваша digital-команда</h1>
-      <p>
-        Мы создаём современные адаптивные сайты, которые работают на вас.
-        Начинающим бизнесам и частным специалистам мы помогаем заявить о себе в интернете.
-      </p>
-      <p>
-        Наш сайт — это витрина возможностей: портфолио, новости из мира веб-разработки,
-        список услуг и простые способы связаться с нами.
-      </p>
+      <h1>{t('home.title')}</h1>
+      <p>{t('home.text1')}</p>
+      <p>{t('home.text2')}</p>
       <div className="cta">
-        <a href="/about" className="button">О студии</a>
-        <a href="/contacts" className="button button-outline">Связаться</a>
+        <Link to="/about" className="button">{t('home.cta_about')}</Link>
+        <Link to="/contacts" className="button button-outline">{t('home.cta_contact')}</Link>
       </div>
       <div className="avatar-placeholder">
-        <img src="https://via.placeholder.com/150" alt="Логотип WebCraft" />
+        <img src="https://via.placeholder.com/150" alt="Logo" />
       </div>
     </article>
   );

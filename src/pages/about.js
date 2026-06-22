@@ -1,35 +1,29 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../LanguageContext';
 import './about.css';
 
 function About() {
+  const { t } = useContext(LanguageContext);
+  const skills = t('about.skills'); // это массив
+
   return (
     <article className="about">
-      <h1>О нашей команде</h1>
+      <h1>{t('about.title')}</h1>
       <div className="about-content">
         <div className="about-text">
-          <p>
-            Мы — небольшая веб-студия, которая помогает бизнесу и частным лицам
-            получить качественное представительство в интернете.
-          </p>
-          <p>
-            За время работы мы освоили современные технологии: HTML5, CSS3, JavaScript, React.
-            Постоянно учимся и следим за трендами, чтобы предлагать вам лучшие решения.
-          </p>
-          <h2>Наши компетенции</h2>
+          <p>{t('about.p1')}</p>
+          <p>{t('about.p2')}</p>
+          <h2>{t('about.skills_title')}</h2>
           <ul className="skills">
-            <li>Адаптивная вёрстка (Flexbox, Grid)</li>
-            <li>Разработка на React (Create React App, Router, хуки)</li>
-            <li>Работа с Git и GitHub</li>
-            <li>Основы дизайна в Figma</li>
-            <li>Техническая поддержка и доработка сайтов</li>
+            {Array.isArray(skills) && skills.map((skill, i) => (
+              <li key={i}>{skill}</li>
+            ))}
           </ul>
-          <h2>Наша миссия</h2>
-          <p>
-            Помочь начинающим и растущим проектам получить удобный, современный сайт,
-            который будет приносить клиентов и формировать доверие к бренду.
-          </p>
+          <h2>{t('about.mission_title')}</h2>
+          <p>{t('about.mission_text')}</p>
         </div>
         <div className="about-photo">
-          <img src="https://via.placeholder.com/200" alt="Логотип компании" />
+          <img src="https://via.placeholder.com/200" alt="Company logo" />
         </div>
       </div>
     </article>

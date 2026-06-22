@@ -20,7 +20,7 @@ function Header() {
       <button
         className={`hamburger ${menuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
-        aria-label="Меню"
+        aria-label={t('header.menu')}
       >
         <span className="hamburger-line"></span>
         <span className="hamburger-line"></span>

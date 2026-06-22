@@ -85,9 +85,15 @@ function Contacts() {
             </li>
           </ul>
           <div className="social-links">
-            <a href="https://vk.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">VK</a>
-            <a href="https://github.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">GitHub</a>
-            <a href="https://habr.com/ru/users/webcraft" target="_blank" rel="noreferrer" className="social-icon">Habr</a>
+            <a href="https://vk.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">
+              {t('contacts.social_vk')}
+            </a>
+            <a href="https://github.com/webcraft" target="_blank" rel="noreferrer" className="social-icon">
+              {t('contacts.social_github')}
+            </a>
+            <a href="https://habr.com/ru/users/webcraft" target="_blank" rel="noreferrer" className="social-icon">
+              {t('contacts.social_habr')}
+            </a>
           </div>
         </div>
 

@@ -6,14 +6,49 @@
     "news": "News",
     "about": "About",
     "services": "Services",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "menu": "Menu"
+  },
+  "sidebar": {
+    "title": "Navigation"
   },
   "home": {
     "title": "WebCraft — your digital team",
     "text1": "We create modern responsive websites that work for you. We help startups and private specialists to make a statement online.",
     "text2": "Our site is a showcase of possibilities: portfolio, news from the web development world, list of services and easy ways to contact us.",
     "cta_about": "About us",
-    "cta_contact": "Contact us"
+    "cta_contact": "Contact us",
+    "advantages_title": "Why choose us",
+    "tech_title": "Our stack",
+    "contact_button": "Contact us",
+    "hero_image_alt": "Web development team illustration",
+    "tech_items": [
+      "React",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Figma"
+    ],
+    "more_services": "All services →",
+    "news_read_more": "Read more →",
+    "more_news": "All news →",
+    "advantages_items": [
+      {
+        "icon": "🎨",
+        "title": "Modern design",
+        "desc": "We follow trends and build stylish interfaces."
+      },
+      {
+        "icon": "📱",
+        "title": "Responsive layout",
+        "desc": "Sites look great on every device."
+      },
+      {
+        "icon": "🚀",
+        "title": "Project support",
+        "desc": "We support and develop your site after launch."
+      }
+    ]
   },
   "about": {
     "title": "About our team",
@@ -32,6 +67,7 @@
   },
   "news": {
     "title": "Studio News",
+    "read_more": "Read more →",
     "items": [
       {
         "date": "May 15, 2025",
@@ -63,49 +99,93 @@
         "title": "Business card site",
         "price": "from 15 000 ₽",
         "desc": "One-page responsive website with information about you or your business. Includes sections: about, services, contacts.",
-        "features": ["Responsive design", "Contact form", "Basic SEO"]
+        "features": [
+          "Responsive design",
+          "Contact form",
+          "Basic SEO"
+        ]
       },
       {
         "title": "Landing page",
         "price": "from 25 000 ₽",
         "desc": "A landing page for an ad campaign or product. Thoughtful structure that leads to a target action.",
-        "features": ["Unique design", "Call to action", "Analytics integration"]
+        "features": [
+          "Unique design",
+          "Call to action",
+          "Analytics integration"
+        ]
       },
       {
         "title": "Improvement & support",
         "price": "from 5 000 ₽",
         "desc": "Bug fixes, adding new blocks, updating content on an existing site.",
-        "features": ["React/Vue work", "Responsive layout", "Technical consultation"]
+        "features": [
+          "React/Vue work",
+          "Responsive layout",
+          "Technical consultation"
+        ]
       },
       {
         "title": "Markup from design",
         "price": "from 10 000 ₽",
         "desc": "Turn your Figma layout into clean, cross-browser HTML/CSS code. We'll deliver the finished project in a convenient format.",
-        "features": ["Pixel Perfect", "BEM methodology", "Accessibility (a11y)"]
+        "features": [
+          "Pixel Perfect",
+          "BEM methodology",
+          "Accessibility (a11y)"
+        ]
       }
     ]
-    },
-        "contacts": {
-        "title": "Contact us",
-        "info_title": "Our contacts",
-        "phone_label": "Phone:",
-        "phone_value": "+7 (999) 123-45-67",
-        "email_label": "Email:",
-        "email_value": "hello@webcraft.ru",
-        "telegram_label": "Telegram:",
-        "telegram_value": "@webcraft",
-        "address_label": "Address:",
-        "address_text": "Moscow, Primernaya st., 1",
-        "form_title": "Write to us",
-        "name_label": "Name",
-        "email_label": "Email",
-        "message_label": "Message",
-        "submit": "Send",
-        "alert": "Thank you, {{name}}! We have received your message.",
-        "errors_required": "Required field",
-        "errors_invalid": "Invalid email format",
-        "sending": "Sending...",
-        "success_msg": "Message sent successfully!",
-        "error_msg": "An error occurred. Please try again later."
-    }
+  },
+  "contacts": {
+    "title": "Contact us",
+    "info_title": "Our contacts",
+    "phone_label": "Phone:",
+    "phone_value": "+7 (999) 123-45-67",
+    "email_label": "Email",
+    "email_value": "hello@webcraft.ru",
+    "telegram_label": "Telegram:",
+    "telegram_value": "@webcraft",
+    "address_label": "Address:",
+    "address_text": "Moscow, Primernaya st., 1",
+    "form_title": "Write to us",
+    "name_label": "Name",
+    "message_label": "Message",
+    "submit": "Send",
+    "alert": "Thank you, {{name}}! We have received your message.",
+    "errors_required": "Required field",
+    "errors_invalid": "Invalid email format",
+    "sending": "Sending...",
+    "success_msg": "Message sent successfully!",
+    "error_msg": "An error occurred. Please try again later.",
+    "social_vk": "VK",
+    "social_github": "GitHub",
+    "social_habr": "Habr"
+  },
+  "aside": {
+    "tags_title": "Tags",
+    "technologies": "Technologies",
+    "stack": "Stack",
+    "contacts": "Contacts",
+    "tags": [
+      "React",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Figma"
+    ],
+    "stack_items": [
+      "Figma",
+      "Git",
+      "VS Code"
+    ],
+    "contacts_items": [
+      "Telegram: @webcraft",
+      "GitHub: webcraft",
+      "Email: hello@webcraft.ru"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 WebCraft. All rights reserved."
+  }
 }

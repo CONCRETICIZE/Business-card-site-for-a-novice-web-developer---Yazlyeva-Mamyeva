@@ -1,89 +1,103 @@
-.services {
-  padding: 2rem;
+.services-page {
+  width: 100%;
 }
 
-.services h1 {
-  margin-bottom: 0.5rem;
-  color: #1e1e2f;
+.services-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .services-intro {
-  margin-bottom: 2rem;
-  color: #555;
-  max-width: 700px;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 30px;
 }
 
 .service-card {
   background: var(--card-bg);
-  box-shadow: 0 2px 8px var(--card-shadow);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .service-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
   color: var(--text-color);
-}
-
-.desc {
-  color: var(--text-color);
-}
-
-.service-card h2 {
-  color: #1e1e2f;
-  margin-bottom: 0.5rem;
 }
 
 .price {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #61dafb;
-  margin: 0.5rem 0;
+  color: var(--accent);
+  margin-bottom: 1rem;
 }
 
 .desc {
-  color: #444;
-  line-height: 1.5;
-  margin-bottom: 1rem;
   flex: 1;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.9;
 }
 
 .features {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
+  text-align: left;
 }
 
 .features li {
-  padding: 0.3rem 0;
-  border-bottom: 1px solid #eee;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border-color);
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: bold;
 }
 
 .order-btn {
-  display: block;
-  text-align: center;
-  background: #61dafb;
+  display: inline-block;
+  background: var(--accent);
   color: #1e1e2f;
-  padding: 0.6rem;
-  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s;
   margin-top: auto;
 }
 
 .order-btn:hover {
-  background: #1e1e2f;
-  color: white;
+  background: #4fa8d5;
 }
 
 @media (max-width: 768px) {
-  .services {
-    padding: 1rem;
-  }
   .services-grid {
     grid-template-columns: 1fr;
   }

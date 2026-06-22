@@ -1,10 +1,16 @@
+﻿import { useContext } from 'react';
+import { LanguageContext } from '../LanguageContext';
 import './footer.css';
 
 function Footer() {
+  const { t } = useContext(LanguageContext);
+
   return (
     <footer className="footer">
-      <p>© 2025 [Твоё Имя]. Все права защищены.</p>
-      <p>Email: your.email@example.com | Телефон: +7 (000) 000-00-00</p>
+      <p>{t('footer.copyright')}</p>
+      <p>
+        {t('contacts.email_label')} {t('contacts.email_value')} | {t('contacts.phone_label')} {t('contacts.phone_value')}
+      </p>
     </footer>
   );
 }

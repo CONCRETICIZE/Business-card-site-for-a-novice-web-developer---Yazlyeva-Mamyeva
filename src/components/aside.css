@@ -1,0 +1,21 @@
+.aside {
+  width: 200px;
+  background: #f9f9f9;
+  padding: 1rem;
+}
+
+.tags span {
+  display: inline-block;
+  background: #61dafb;
+  color: #1e1e2f;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .aside {
+    width: 100%;
+  }
+}
